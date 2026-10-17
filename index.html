@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Starlight Shipping - International shipping and cargo services from the USA to Cameroon.">
+    <title>Starlight Shipping | USA to Cameroon International Cargo & Freight</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(226, 232, 240, 0.7); }
+        .catalog-item { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .catalog-item:hover { transform: translateY(-6px); box-shadow: 0 25px 30px -10px rgba(15, 23, 42, 0.1); border-color: rgba(245, 158, 11, 0.4); }
+        .hero-gradient { background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-amber-500 selection:text-white" x-data="starlightApp()">
+
+    <!-- TOP BAR -->
+    <div class="bg-slate-950 text-slate-400 text-xs py-2.5 px-4 text-center font-medium border-b border-slate-800">
+        <span class="text-amber-400 font-bold">★ USA Hub:</span> 1510 Marblewood Ave, Capitol Height, MD 20743 &nbsp;|&nbsp; <span class="text-amber-400 font-bold">Warehouse:</span> 833-826-0022
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="h-11 w-11 rounded-2xl bg-gradient-to-tr from-amber-600 to-amber-400 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-amber-500/20">★</div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 leading-none">Starlight<span class="text-amber-500">Shipping</span></span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">USA to Cameroon</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-sm text-slate-600">
+                <a href="#catalog" class="hover:text-amber-600 transition">Catalog & Prices</a>
+                <a href="#vehicles" class="hover:text-amber-600 transition">Car Shipping Rates</a>
+                <a href="#terms" class="hover:text-amber-600 transition">General Terms</a>
+                <a href="#contract" class="hover:text-amber-600 transition">Auto Contract</a>
+                <a href="#restrictions" class="hover:text-amber-600 transition">Prohibited Goods</a>
+                <a href="#contact" class="hover:text-amber-600 transition">Contact Hub</a>
+            </div>
+            <div>
+                <a href="#contact" class="bg-slate-900 hover:bg-amber-500 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-md transition duration-300">Ship With Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden pt-24 pb-32 lg:pt-36 lg:pb-40 hero-gradient text-white">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl">
+            <span class="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-amber-500/10 text-amber-400 font-bold text-xs tracking-wider uppercase mb-8 border border-amber-500/20 shadow-inner">
+                <span class="h-2 w-2 rounded-full bg-amber-400 animate-pulse"></span> Professional Ocean Freight Logistics
+            </span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8">
+                Transporting Approved Goods <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">From the USA to Cameroon.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-300 mb-12 font-light max-w-2xl mx-auto leading-relaxed">
+                Seamless ocean transportation, rigorous tracking, and secure cargo handling backed by comprehensive terms of service and auto transport contracts.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#catalog" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-8 py-4 rounded-2xl shadow-xl shadow-amber-500/20 transition transform hover:-translate-y-0.5">
+                    Select Items & Pricing Catalog ↓
+                </a>
+                <a href="#vehicles" class="w-full sm:w-auto bg-slate-800/80 hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-2xl border border-slate-700/80 backdrop-blur transition">
+                    Car Shipping Rates
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG & SELECTION SECTION (GOODS ONLY) -->
+    <section id="catalog" class="py-28 bg-slate-100/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-600 mb-3 block">Interactive Catalog & Selection</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">Cameroon Shipping Catalog</h2>
+                <p class="text-slate-600 text-base">Select the quantities you want to ship. Your selected items will automatically sync to your consignment request form below.</p>
+                
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div class="relative w-full sm:w-96">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">🔍</span>
+                        <input type="text" x-model="search" placeholder="Search items (e.g. barrel, mattress, generator)..." class="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white text-sm shadow-sm transition">
+                    </div>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <button @click="activeTab = 'all'" :class="activeTab === 'all' ? 'bg-slate-900 text-white shadow-md' : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'" class="px-5 py-3 rounded-2xl text-xs font-bold transition">All Items</button>
+                        <button @click="activeTab = 'Container'" :class="activeTab === 'Container' ? 'bg-slate-900 text-white shadow-md' : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'" class="px-5 py-3 rounded-2xl text-xs font-bold transition">Barrels & Boxes</button>
+                        <button @click="activeTab = 'Furniture'" :class="activeTab === 'Furniture' ? 'bg-slate-900 text-white shadow-md' : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'" class="px-5 py-3 rounded-2xl text-xs font-bold transition">Furniture</button>
+                        <button @click="activeTab = 'Appliances'" :class="activeTab === 'Appliances' ? 'bg-slate-900 text-white shadow-md' : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'" class="px-5 py-3 rounded-2xl text-xs font-bold transition">Appliances</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRID OF GENERAL CARGO ITEMS -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <template x-for="item in filteredCatalogItems" :key="item.id">
+                    <div class="catalog-item glass-card rounded-3xl p-7 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-block py-1 px-3 rounded-lg bg-amber-50 text-amber-700 text-[10px] font-black uppercase tracking-wider border border-amber-100" x-text="item.category"></span>
+                            </div>
+                            
+                            <!-- ITEM IMAGE DISPLAY -->
+                            <div class="h-48 w-full bg-slate-100 rounded-2xl overflow-hidden mb-5 border border-slate-200/60 flex items-center justify-center relative">
+                                <img :src="'images/' + item.image" :alt="item.name" class="w-full h-full object-cover transition transform hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&auto=format&fit=crop&q=60'">
+                            </div>
+
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" x-text="item.name"></h3>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between border-t border-slate-100 pt-5 mt-4 mb-4">
+                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Unit Fee</span>
+                                <span class="text-xl font-black text-slate-900" x-text="item.price"></span>
+                            </div>
+
+                            <!-- QUANTITY CONTROLLER -->
+                            <div class="flex items-center justify-between bg-slate-100/80 p-2 rounded-xl border border-slate-200/60">
+                                <span class="text-xs font-bold text-slate-600 pl-2">Quantity:</span>
+                                <div class="flex items-center space-x-3">
+                                    <button @click="decreaseQty(item)" type="button" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-slate-700 flex items-center justify-center hover:bg-amber-500 hover:text-white transition">-</button>
+                                    <span class="font-black text-sm w-4 text-center" x-text="item.qty"></span>
+                                    <button @click="increaseQty(item)" type="button" class="w-8 h-8 rounded-lg bg-white shadow-sm font-bold text-slate-700 flex items-center justify-center hover:bg-amber-500 hover:text-white transition">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- VEHICLE TRANSPORTATION RATES SECTION -->
+    <section id="vehicles" class="py-24 bg-white border-t border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-rose-600 mb-3 block">Dedicated Vehicle Ocean Freight</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">Shipping Cost of Cars to Douala - Cameroon</h2>
+                <p class="text-slate-600 text-base">Select your vehicle below to add auto ocean shipping directly to your consignment form total.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <template x-for="car in vehicleItems" :key="car.id">
+                    <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                        <div>
+                            <div class="h-40 w-full bg-white rounded-2xl overflow-hidden mb-4 border border-slate-200/60 flex items-center justify-center">
+                                <img :src="'images/' + car.image" :alt="car.name" class="w-full h-full object-contain p-2" onerror="this.src='https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=500&auto=format&fit=crop&q=60'">
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-1" x-text="car.name"></h3>
+                            <span class="text-xs font-semibold text-rose-600 block mb-4">USA to Douala - Cameroon</span>
+                        </div>
+                        
+                        <div>
+                            <div class="flex items-center justify-between border-t border-slate-200 pt-4 mb-4">
+                                <span class="text-xs font-bold text-slate-400 uppercase">Rate</span>
+                                <span class="text-2xl font-black text-slate-900" x-text="car.price"></span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between bg-white p-2 rounded-xl border border-slate-200">
+                                <span class="text-xs font-bold text-slate-600 pl-2">Quantity:</span>
+                                <div class="flex items-center space-x-3">
+                                    <button @click="decreaseQty(car)" type="button" class="w-8 h-8 rounded-lg bg-slate-100 font-bold text-slate-700 flex items-center justify-center hover:bg-amber-500 hover:text-white transition">-</button>
+                                    <span class="font-black text-sm w-4 text-center" x-text="car.qty"></span>
+                                    <button @click="increaseQty(car)" type="button" class="w-8 h-8 rounded-lg bg-slate-100 font-bold text-slate-700 flex items-center justify-center hover:bg-amber-500 hover:text-white transition">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- TERMS & CONDITIONS -->
+    <section id="terms" class="py-28 bg-slate-50 border-t border-slate-200/80">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-red-600 mb-3 block">Official Legal Guidelines</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">OUR TERMS AND CONDITIONS</h2>
+            </div>
+
+            <div class="space-y-12">
+                <!-- SECTION I -->
+                <div class="bg-white border border-slate-200/80 rounded-3xl p-8 sm:p-10 shadow-sm">
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-3 border-b border-slate-200 pb-4">
+                        <span class="h-8 w-8 rounded-lg bg-slate-900 text-white flex items-center justify-center text-sm">I</span> ABOUT THE GOODS
+                    </h3>
+                    <ul class="space-y-4 text-sm text-slate-700 leading-relaxed font-medium">
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">a)</span> <div>You will be informed of the departure day and date from the USA to Cameroon. However, we shall not be liable for any delays that may occur due to circumstances beyond our control.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">b)</span> <div>You will be informed as soon as the ship arrives Douala - Cameroon.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">c)</span> <div>You will be informed when the customs clearing process is completed and the exact day and date the container will be out.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">d)</span> <div>You will be informed of the offloading day and date, place of offloading and time.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">e)</span> <div>Once offloaded, you will be expected to verify the state and content of your consignment before entering full possession.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">f)</span> <div>If by mistake or misunderstanding items that do not belong to you are found in your consignment, you will be bound to refund them without delay.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">g)</span> <div>Once you leave the offloading place after completing verification of your consignment, the delivery process is considered effective and completed.</div></li>
+                    </ul>
+                </div>
+
+                <!-- SECTION II -->
+                <div class="bg-white border border-slate-200/80 rounded-3xl p-8 sm:p-10 shadow-sm">
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-3 border-b border-slate-200 pb-4">
+                        <span class="h-8 w-8 rounded-lg bg-slate-900 text-white flex items-center justify-center text-sm">II</span> LOST OR DAMAGED ITEMS
+                    </h3>
+                    <ul class="space-y-4 text-sm text-slate-700 leading-relaxed font-medium">
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">a)</span> <div>Starlight Shipping will pay a maximum of $150 to any confirmed damaged uninsured items.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">b)</span> <div>To receive any payment for damaged uninsured cargo, the claimant must establish a prima facie that the goods were delivered to the carrier in good condition and were discharged in a damaged state.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">c)</span> <div>Starlight Shipping will pay a maximum of $500 to any confirmed missing/lost uninsured items as determined by the sender and Starlight.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">d)</span> <div>To receive payment for a loss, the shipper must establish a prima facie case by showing the goods were delivered to Starlight in good condition and were either not delivered or delivered damaged.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">e)</span> <div>Starlight would not pay for a loss caused by either Perils of the Sea, Act of God/Natural disasters, Error in Navigation, or Insufficient Packing.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">f)</span> <div>Starlight would pay the commercial value for lost or damaged insured items. Insurance pay is 10% of the declared value of the items at the time of shipment.</div></li>
+                    </ul>
+                </div>
+
+                <!-- SECTION III -->
+                <div class="bg-white border border-slate-200/80 rounded-3xl p-8 sm:p-10 shadow-sm">
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-3 border-b border-slate-200 pb-4">
+                        <span class="h-8 w-8 rounded-lg bg-slate-900 text-white flex items-center justify-center text-sm">III</span> ABOUT THE CUSTOM DUTIES
+                    </h3>
+                    <ul class="space-y-4 text-sm text-slate-700 leading-relaxed font-medium">
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">a)</span> <div>The amount charged for each item will depend on the quantity and value of the item.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">b)</span> <div>Once You are informed of the amount you are required to pay for your consignment. Payment must be made in full before the container is removed by the clearing agent.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">c)</span> <div>If for one Reason or another you fail to pay on the agreed day, date and time, you will be required to pay an extra 10 percent of the total amount.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">d)</span> <div>You will enter complete possession of your items only after full payment is made.</div></li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 font-bold shrink-0">e)</span> <div>You have four maximum days to pick up your items from our warehouse after the container is offloaded after which a daily storage fee of 2500 francs will apply.</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OCEAN TRANSPORTATION SERVICE CONTRACT (VEHICLE / AUTO SHIPPING) -->
+    <section id="contract" class="py-28 bg-slate-900 text-white border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-3 block">Legal Documentation</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Ocean Transportation Service Contract</h2>
+                <p class="text-slate-400 text-sm mt-3">Terms and conditions governing vehicle and auto transport services between the Client and Starlight Shipping.</p>
+            </div>
+
+            <div class="bg-slate-800/90 border border-slate-700/80 rounded-3xl p-8 sm:p-12 shadow-xl space-y-10 text-slate-300 text-sm leading-relaxed">
+                <p class="italic text-slate-300 border-l-4 border-amber-500 pl-4 py-1">
+                    This Transportation Service Contract is made and entered into by and between <strong>[Client Name Placeholder]</strong> ("Client") and <strong>Starlight Shipping ("Service Provider")</strong>. This agreement outlines the terms and conditions under which Ocean Transportation Services will be provided. The Service Provider agrees to offer transportation services for the Client as described in this Contract.
+                </p>
+
+                <p>
+                    Transportation services will commence upon schedule agreement and will continue until the arrival of the ship in Douala-Cameroon. Any changes to the schedule must be communicated at least 24 hours in advance and mutually agreed upon.
+                </p>
+
+                <!-- SECTION I CONTRACT -->
+                <div class="bg-slate-900/60 p-6 sm:p-8 rounded-2xl border border-slate-700/50">
+                    <h3 class="text-lg font-bold text-amber-400 mb-4 uppercase tracking-wider">I. Payment Terms and Conditions</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400 font-bold shrink-0">a)</span>
+                            <div>The Client agrees to PAY the Service Provider for the Ocean Transportation of <strong class="text-white">(make/model/year)</strong> [Vehicle Specs] VIN # [Vehicle VIN Number]. Payments shall be made on the day the car is loaded on a container.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400 font-bold shrink-0">b)</span>
+                            <div>The Service Provider shall not implement any hidden charges not referenced in this contract.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400 font-bold shrink-0">c)</span>
+                            <div>The Client agrees to PAY the Service Provider the total sum for Ocean Freight and the Clearing Cost (VIN # referenced). All payments shall be made on the 1st day that the Container arrives Douala-Cameroon.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400 font-bold shrink-0">d)</span>
+                            <div>The Client agrees to pay a penalty of <strong class="text-white">10%</strong> of any amount owed 6 days after the container arrives in Cameroon. This 10% would double every two weeks until the vehicle is collected by the Client.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SECTION II CONTRACT -->
+                <div class="bg-slate-900/60 p-6 sm:p-8 rounded-2xl border border-slate-700/50">
+                    <h3 class="text-lg font-bold text-amber-400 mb-4 uppercase tracking-wider">II. Responsibilities of the Client and Service Provider</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400 font-bold shrink-0">a)</span>
+                            <div>It is the responsibility of the Client to ensure that all payments are made on time.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400 font-bold shrink-0">b)</span>
+                            <div>The Service Provider offers auto shipping insurance through the shipping lines (ACL-Grimaldi and Mediterranean Shipping Company). It is the responsibility of the Client to purchase auto shipping insurance to cover any <strong class="text-white">DAMAGES TO THE CAR DURING TRANSPORTION OR ANY LOST AT SEA</strong>.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400 font-bold shrink-0">c)</span>
+                            <div>Both parties agree that the Service Provider is not responsible for delays caused by uncontrollable circumstances such as weather and ship delays.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400 font-bold shrink-0">d)</span>
+                            <div>This Contract ends as soon as the vehicle is delivered to the Client by the service Provider/Representative of the service provider in Douala.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-slate-700 pt-6 space-y-4 text-xs text-slate-400">
+                    <p><strong>Governing Law:</strong> This agreement shall be governed by and interpreted in accordance with the laws of the State of Maryland - USA and the country of Cameroon.</p>
+                    <p><strong>Modifications:</strong> Both parties agree that there can be no modification to this contract once the container start sailing.</p>
+                    <p class="text-slate-200 font-semibold pt-2">By submitting a consignment or working with Starlight Shipping, both parties acknowledge that they have read, understood, and agreed to the terms of this Transportation Service Contract.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROHIBITED ITEMS -->
+    <section id="restrictions" class="py-24 bg-rose-50/40 border-t border-rose-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white border border-rose-200 rounded-3xl p-8 sm:p-10 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 transform translate-x-4 -translate-y-4 text-rose-100 text-8xl font-black select-none pointer-events-none">⚠️</div>
+                <h3 class="text-2xl font-extrabold text-rose-950 mb-4 relative z-10">Strictly Prohibited Goods</h3>
+                <ul class="space-y-3 text-sm font-semibold text-rose-900 mb-8 relative z-10">
+                    <li class="flex items-center gap-2">❌ Cameroon Contraband (Weapons, Firearms)</li>
+                    <li class="flex items-center gap-2">❌ Alcohol / Liquor</li>
+                </ul>
+                <div class="bg-rose-50 rounded-2xl p-5 text-xs text-rose-900 border border-rose-200/80 leading-relaxed font-medium relative z-10">
+                    <strong class="font-bold uppercase tracking-wider block mb-1 text-rose-950">Legal Notice:</strong> Senders and receivers are fully responsible for any contraband found by customs.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & DYNAMIC FORM -->
+    <section id="contact" class="py-28 hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-3 block">Ready to Ship?</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">Complete Your Consignment Order</h2>
+                    <p class="text-slate-300 mb-10 font-light leading-relaxed">
+                        Review your selected items on the left, enter your contact information below, and submit your order directly to our dispatch hub.
+                    </p>
+                    <div class="space-y-4 text-sm font-medium">
+                        <div class="bg-slate-800/80 backdrop-blur border border-slate-700/80 p-5 rounded-2xl flex flex-col gap-1">
+                            <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">USA Office Address</span>
+                            <span class="text-slate-200">1510 Marblewood Ave, Capitol Height, MD 20743</span>
+                        </div>
+                        <div class="bg-slate-800/80 backdrop-blur border border-slate-700/80 p-5 rounded-2xl flex flex-col gap-1">
+                            <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">Customer Support Phone Lines</span>
+                            <span class="text-slate-200">USA: 301 633 1514 &nbsp;|&nbsp; Warehouse: 833-826-0022 &nbsp;|&nbsp; CAM: +237 671 236 236</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white text-slate-900 p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-100">
+                    <h3 class="text-2xl font-extrabold mb-2 tracking-tight">Consignment Request</h3>
+                    <p class="text-xs text-slate-500 mb-6">Your selected items and total estimated cost will be automatically attached to this submission.</p>
+                    
+                    <form action="https://formspree.io/f/xgaenddp" method="POST" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Full Name</label>
+                            <input type="text" name="full_name" required class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 bg-slate-50/50 transition" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Email Address</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 bg-slate-50/50 transition" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Phone Number</label>
+                            <input type="tel" name="phone" required class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 bg-slate-50/50 transition" placeholder="(301) 000-0000">
+                        </div>
+                        
+                        <!-- HIDDEN INPUT THAT AUTOMATICALLY COLLECTS SELECTED ITEMS & TOTAL -->
+                        <input type="hidden" name="order_summary" :value="formattedOrderSummary">
+
+                        <!-- VISUAL SUMMARY BOX FOR THE USER -->
+                        <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2">Selected Items Summary:</span>
+                            <div class="text-xs text-slate-700 max-h-32 overflow-y-auto space-y-1 mb-3" x-html="orderHtmlSummary"></div>
+                            <div class="border-t border-slate-200 pt-2 flex justify-between items-center text-sm font-black text-slate-900">
+                                <span>Estimated Total:</span>
+                                <span class="text-amber-600 text-base" x-text="formattedTotalPrice"></span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Additional Instructions / Notes / Vehicle VIN</label>
+                            <textarea name="message" rows="2" class="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 bg-slate-50/50 transition resize-none" placeholder="Drop-off timing or vehicle VIN number if shipping auto..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold py-4 rounded-2xl transition shadow-lg shadow-amber-500/20 transform hover:-translate-y-0.5">
+                            Submit Consignment Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-500 py-12 border-t border-slate-900 text-xs text-center">
+        <p>Starlight Shipping Import & Export &copy; 2026. Backed under COGSA 1936 & Maryland Law.</p>
+    </footer>
+
+    <script>
+        function starlightApp() {
+            return {
+                search: '',
+                activeTab: 'all',
+                items: [
+                    { id: 1, name: 'Big Rubber Jars / Barrels', category: 'Container', rawPrice: 250, price: '$250', image: 'big-rubber-barrel.jpg', qty: 0 },
+                    { id: 2, name: 'Small Rubber Jars / Barrels', category: 'Container', rawPrice: 175, price: '$175', image: 'small-rubber-barrel.jpg', qty: 0 },
+                    { id: 3, name: 'Big U-Haul Boxes', category: 'Container', rawPrice: 350, price: '$350', image: 'big-uhaul-box.png', qty: 0 },
+                    { id: 4, name: 'Medium U-Haul Boxes', category: 'Container', rawPrice: 250, price: '$250', image: 'uhaul-medium.webp', qty: 0 },
+                    { id: 5, name: 'Small U-Haul Boxes', category: 'Container', rawPrice: 100, price: '$100', image: 'small-uhaul-box.jpg', qty: 0 },
+                    { id: 6, name: 'AMAZON Bags', category: 'Container', rawPrice: 100, price: '$100', image: 'amazon-bag.jpg', qty: 0 },
+                    { id: 7, name: 'Costco Totes', category: 'Container', rawPrice: 65, price: '$65', image: 'costco-tote.jpg', qty: 0 },
+                    { id: 8, name: 'Big Walmart Totes', category: 'Container', rawPrice: 100, price: '$100', image: 'walmart-tote-big.jpg', qty: 0 },
+                    { id: 9, name: 'Big Totes with Wheels', category: 'Container', rawPrice: 200, price: '$200', image: 'tote-wheels-big.jpg', qty: 0 },
+                    { id: 10, name: 'King Size Mattresses', category: 'Furniture', rawPrice: 200, price: '$200', image: 'mattress-king.jpg', qty: 0 },
+                    { id: 11, name: 'Queen Size Mattresses', category: 'Furniture', rawPrice: 150, price: '$150', image: 'mattress-queen.jpg', qty: 0 },
+                    { id: 12, name: 'Small Queen Size', category: 'Furniture', rawPrice: 100, price: '$100', image: 'mattress-queen-small.jpg', qty: 0 },
+                    { id: 13, name: 'Full Size Mattresses', category: 'Furniture', rawPrice: 100, price: '$100', image: 'mattress-full.webp', qty: 0 },
+                    { id: 14, name: '5 Gallon Paint', category: 'Container', rawPrice: 20, price: '$20', image: 'paint-5-gallon.webp', qty: 0 },
+                    { id: 15, name: 'Bucket of Shoes', category: 'Container', rawPrice: 60, price: '$60', image: 'bucket-shoes.jpg', qty: 0 },
+                    { id: 16, name: 'Adult Bicycles', category: 'Appliances', rawPrice: 40, price: '$40', image: 'bicycle-adult.jpg', qty: 0 },
+                    { id: 17, name: 'Children Bicycles', category: 'Appliances', rawPrice: 25, price: '$25', image: 'bicycle-child.jpg', qty: 0 },
+                    { id: 18, name: 'Big Double Door Freeze', category: 'Appliances', rawPrice: 400, price: '$400', image: 'freezer-double-door-big.jpg', qty: 0 },
+                    { id: 19, name: 'Normal Double Door Freeze', category: 'Appliances', rawPrice: 350, price: '$350', image: 'freezer-double-door-normal.jpg', qty: 0 },
+                    { id: 20, name: 'Big Single Door Freeze', category: 'Appliances', rawPrice: 300, price: '$300', image: 'freezer-single-door-big.jpg', qty: 0 },
+                    { id: 21, name: 'Normal Single Door Freeze', category: 'Appliances', rawPrice: 250, price: '$250', image: 'freezer-single-door-normal.jpg', qty: 0 },
+                    { id: 22, name: 'Gas Cooker', category: 'Appliances', rawPrice: 200, price: '$200', image: 'gas-cooker.jpg', qty: 0 },
+                    { id: 23, name: 'Washer', category: 'Appliances', rawPrice: 200, price: '$200', image: 'washer.jpg', qty: 0 },
+                    { id: 24, name: 'Dryer', category: 'Appliances', rawPrice: 200, price: '$200', image: 'dryer.jpg', qty: 0 },
+                    { id: 25, name: 'Normal 3 Seater Living Room Chair', category: 'Furniture', rawPrice: 300, price: '$300', image: 'chair-3-seater.jpg', qty: 0 },
+                    { id: 26, name: 'Normal 2 Seater Living Room Chair', category: 'Furniture', rawPrice: 200, price: '$200', image: 'chair-2-seater.jpg', qty: 0 },
+                    { id: 27, name: 'Normal 1 Seater Living Room Chair', category: 'Furniture', rawPrice: 150, price: '$150', image: 'chair-1-seater.jpg', qty: 0 },
+                    { id: 28, name: 'Generator 1', category: 'Appliances', rawPrice: 200, price: '$200', image: 'generator-standard.webp', qty: 0 },
+                    { id: 29, name: 'Generator 2', category: 'Appliances', rawPrice: 100, price: '$100', image: 'generator-heavyduty.webp', qty: 0 },
+                    { id: 30, name: 'Toyota Corolla', category: 'Vehicles', rawPrice: 1500, price: '$1500', image: 'toyota-corolla.png', qty: 0 },
+                    { id: 31, name: 'Toyota Camry', category: 'Vehicles', rawPrice: 1700, price: '$1700', image: 'toyota-camry.jpg', qty: 0 },
+                    { id: 32, name: 'Toyota RAV4', category: 'Vehicles', rawPrice: 2200, price: '$2200', image: 'toyota-rav4.png', qty: 0 },
+                    { id: 33, name: 'Toyota Highlander', category: 'Vehicles', rawPrice: 2600, price: '$2600', image: 'toyota-highlander.png', qty: 0 },
+                    { id: 34, name: 'Jeep Cherokee', category: 'Vehicles', rawPrice: 2600, price: '$2600', image: 'jeep-cherokee.png', qty: 0 },
+                    { id: 35, name: 'Mercedes-Benz ML 350', category: 'Vehicles', rawPrice: 2600, price: '$2600', image: 'mercedes-ml350.jpg', qty: 0 },
+                    { id: 36, name: 'Jeep Wrangler', category: 'Vehicles', rawPrice: 3000, price: '$3000', image: 'jeep-wrangler.jpg', qty: 0 },
+                    { id: 37, name: 'Mercedes-Benz GL 550', category: 'Vehicles', rawPrice: 3300, price: '$3300', image: 'mercedes-gl550.jpg', qty: 0 }
+                ],
+                increaseQty(item) {
+                    item.qty++;
+                },
+                decreaseQty(item) {
+                    if (item.qty > 0) item.qty--;
+                },
+                get vehicleItems() {
+                    return this.items.filter(i => i.category === 'Vehicles');
+                },
+                get selectedItems() {
+                    return this.items.filter(i => i.qty > 0);
+                },
+                get totalPrice() {
+                    return this.selectedItems.reduce((sum, item) => sum + (item.rawPrice * item.qty), 0);
+                },
+                get formattedTotalPrice() {
+                    return '$' + this.totalPrice;
+                },
+                get orderHtmlSummary() {
+                    if (this.selectedItems.length === 0) {
+                        return '<span class="text-slate-400 italic">No items selected yet. Use the + buttons in the catalog or vehicle rates above.</span>';
+                    }
+                    return this.selectedItems.map(i => `<div>• ${i.name} (x${i.qty}) - $${i.rawPrice * i.qty}</div>`).join('');
+                },
+                get formattedOrderSummary() {
+                    if (this.selectedItems.length === 0) return 'No items selected.';
+                    let summaryText = this.selectedItems.map(i => `${i.name} x${i.qty} ($${i.rawPrice * i.qty})`).join(', ');
+                    return summaryText + ` | TOTAL: $${this.totalPrice}`;
+                },
+                get filteredCatalogItems() {
+                    return this.items.filter(item => {
+                        if (item.category === 'Vehicles') return false; // Exclude vehicles from general catalog section
+                        const matchesSearch = item.name.toLowerCase().includes(this.search.toLowerCase());
+                        const matchesTab = this.activeTab === 'all' || item.category === this.activeTab;
+                        return matchesSearch && matchesTab;
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+</html>
